@@ -1,0 +1,10 @@
+(version 1)
+(rule "Isolation"
+  (condition "(A.NetName == 'GND-2' || A.NetName == '12V-*' || A.NetName == 'Net-(D4-*)' || A.NetName == 'Net-(OP1-*)' || A.NetName == '/TL_REF' || A.NetName == 'Net-(R14-Pad2)' || A.NetName == 'Net-(D5-Pad2)') && !(B.NetName == 'GND-2' || B.NetName == '12V-*' || B.NetName == 'Net-(D4-*)' || B.NetName == 'Net-(OP1-*)' || B.NetName == '/TL_REF' || B.NetName == 'Net-(R14-Pad2)' || B.NetName == 'Net-(D5-Pad2)')")
+  (constraint clearance (min 6mm)))
+(rule "Isolation reverse"
+  (condition "(B.NetName == 'GND-2' || B.NetName == '12V-*' || B.NetName == 'Net-(D4-*)' || B.NetName == 'Net-(OP1-*)' || B.NetName == '/TL_REF' || B.NetName == 'Net-(R14-Pad2)' || B.NetName == 'Net-(D5-Pad2)') && !(A.NetName == 'GND-2' || A.NetName == '12V-*' || A.NetName == 'Net-(D4-*)' || A.NetName == 'Net-(OP1-*)' || A.NetName == '/TL_REF' || A.NetName == 'Net-(R14-Pad2)' || A.NetName == 'Net-(D5-Pad2)')")
+  (constraint clearance (min 6mm)))
+(rule "IC1 fine pitch"
+  (condition "A.memberOfFootprint('IC1') && B.memberOfFootprint('IC1')")
+  (constraint clearance (min 0.2mm)))

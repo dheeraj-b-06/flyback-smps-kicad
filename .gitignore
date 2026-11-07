@@ -1,0 +1,17 @@
+# KiCad local / generated files
+*-backups/
+fp-info-cache
+*.kicad_prl
+*-bak
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+_autosave-*
+*.lck
+~*
+*.tmp
+# Fabrication output (optional - remove these lines if you want to commit Gerbers)
+# gerbers/
+# OS junk
+.DS_Store
+Thumbs.db
